@@ -1,54 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/Register</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Optional custom styles for finer control or unique elements */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(to right bottom, #a7b2bc, #e1e7ed); /* Subtle gradient background */
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login / Register</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
 
-    <header class="bg-gray-800 text-white shadow-lg">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold tracking-wider">YourApp</a>
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="#" class="hover:text-blue-400 transition duration-300 ease-in-out">Home</a></li>
-                    <li><a href="#" class="hover:text-blue-400 transition duration-300 ease-in-out">About Us</a></li>
-                    <li><a href="#" class="bg-blue-600 px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out">Login</a></li>
-                    <li><a href="#" class="hover:text-blue-400 transition duration-300 ease-in-out">Register</a></li>
-                </ul>
-            </nav>
+  <!-- Header Nav -->
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-blue-600">MyApp</h1>
+      <nav class="space-x-4">
+        <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
+        <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
+        <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero / Form Section -->
+  <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-md">
+      <h2 class="text-2xl font-bold mb-6 text-center text-blue-600">Login to Your Account</h2>
+      <form action="#" method="POST" class="space-y-4">
+        <div>
+          <label for="email" class="block text-sm font-medium">Email address</label>
+          <input id="email" name="email" type="email" required class="mt-1 w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
         </div>
-    </header>
+        <div>
+          <label for="password" class="block text-sm font-medium">Password</label>
+          <input id="password" name="password" type="password" required class="mt-1 w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        </div>
+        <div class="flex items-center justify-between">
+          <label class="flex items-center">
+            <input type="checkbox" class="form-checkbox text-blue-600" />
+            <span class="ml-2 text-sm">Remember me</span>
+          </label>
+          <a href="#" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Login</button>
+      </form>
+      <p class="mt-6 text-center text-sm">
+        Don’t have an account?
+        <a href="#" class="text-blue-600 hover:underline">Register</a>
+      </p>
+    </div>
+  </main>
 
-    <main class="flex-grow flex items-center justify-center p-6">
-        <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full animate-fade-in-up">
-            <h2 class="text-3xl font-extrabold text-gray-800 mb-6 text-center">Welcome Back!</h2>
+  <!-- Footer -->
+  <footer class="bg-white shadow mt-12">
+    <div class="container mx-auto px-4 py-6 text-sm text-gray-600 flex justify-between flex-wrap">
+      <div class="mb-2 sm:mb-0">&copy; 2025 MyApp. All rights reserved.</div>
+      <div class="space-x-4">
+        <a href="#" class="hover:text-blue-600">Privacy Policy</a>
+        <a href="#" class="hover:text-blue-600">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
 
-            <form id="loginForm" class="space-y-4">
-                <div>
-                    <label for="loginEmail" class="block text-gray-700 text-sm font-semibold mb-2">Email Address</label>
-                    <input type="email" id="loginEmail" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your.email@example.com" required>
-                </div>
-                <div>
-                    <label for="loginPassword" class="block text-gray-700 text-sm font-semibold mb-2">Password</label>
-                    <input type="password" id="loginPassword" name="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="********" required>
-                </div>
-                <div class="flex justify-between items-center text-sm">
-                    <a href="#" class="text-blue-600 hover:text-blue-800 transition duration-300">Forgot Password?</a>
-                </div>
-                <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-300 ease-in-out transform hover:scale-105">Login</button>
-            </form>
-
-            <form id="registerForm" class="space-y-4 hidden">
-                <div>
-                    <label for="registerUsername" class="block text-gray-700 text-sm font-semibold mb-2">Username</label>
-                    <input type="text" id="registerUsername" name="username" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Choose a username" required>
+</body>
+</html>
